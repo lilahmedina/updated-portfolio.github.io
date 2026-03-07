@@ -6,10 +6,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static assets (images, CSS)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Security middleware
+// Security middleware (must be applied before serving static assets)
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -22,6 +19,9 @@ app.use(helmet({
   frameguard: { action: 'deny' },
   referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
 }));
+
+// Serve static assets (images, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
