@@ -21,11 +21,6 @@ HTML5, CSS3, JavaScript, GitHub Pages, and Render.
 This is a personal portfolio, but suggestions are appreciated!
 Feel free to open an issue or reach out.
 
-### Commit History Visibility
-This is a **public repository**, which means the full commit history is visible to all GitHub users. To protect sensitive data:
-- Secrets, credentials, and API keys must **never** be committed — use environment variables (`.env`) instead.
-- The `.gitignore` file is configured to exclude `node_modules/`, `.env` files, and build artifacts so they are not tracked in the commit history.
-
 ### Future Improvements
 - Add animations or transitions for project cards
 - Expand project documentation
